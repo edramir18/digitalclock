@@ -9,20 +9,16 @@
 </head>
 <body>
     <div class="base">
-        <div class="b-clock">
-            <div id="flex-top" class="b-clock__stack">
-                <div class="b-clock__letter">
-                    <div class="b-clock__flip b-clock__flip--up b-clock__flip--front">8</div>
-                    <div class="b-clock__flip b-clock__flip--up b-clock__flip--back">9</div>
-                </div>
+        <div class="letter" data-key="l">
+            <div class="l-flip">
+                <div class="l-layer">3</div>
+                <div class="l-layer -isback">4</div>
+            </div>            
+            <div class="l-flip">
+                <div class="l-layer -isdown -isrotated">4</div>
+                <div class="l-layer -isdown -isback">3</div>
             </div>
-            <div id="flex-bottom" class="b-clock__stack">
-                <div class="b-clock__letter">
-                    <div class="b-clock__flip b-clock__flip--down b-clock__flip--front b-clock__flip--rotate">9</div>
-                    <div class="b-clock__flip b-clock__flip--down b-clock__flip--back">8</div>
-                </div>
-            </div>
-        </div>        
+        </div>      
     </div>    
     <script src="js/index.js"></script>
 </body>

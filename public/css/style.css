@@ -26,56 +26,102 @@ body {
   background-color: olivedrab;
   height: 100vh;
   width: 100vw;
-}
-
-.b-clock {
-  box-sizing: border-box;
   font-size: 4rem;
-  margin: 0.5em;
 }
 
-.b-clock__stack {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  background-color: rgba(255, 255, 0, 0.6);
-  height: 2em;
-}
+/*
+.b-clock{
+    box-sizing: border-box;
+    font-size: 4rem;
+    margin: 0.5em;
+    
+    &__stack {        
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        background-color: $stack-color;
+        height: 2em;
+    }    
 
-.b-clock__letter {
-  position: relative;
-  background-color: rgba(255, 165, 0, 0.6);
-  height: 2em;
-  width: 100%;
-  overflow: hidden;
-}
+    &__letter {        
+        position: relative;
+        background-color: $letter-color;
+        height: 2em;
+        width: 100%;
+        overflow: hidden;
+    }
 
-.b-clock__flip {
-  position: absolute;
+    &__flip {
+        position: absolute;
+        font-size: 4em;
+        line-height: 1;
+        background-color: $flip-color;
+        transition: transform 0.25s;
+        transform: rotateX(0deg);
+
+        &--front {
+            z-index: 400;
+        }
+
+        &--back {
+            z-index: 200;
+            transition: transform 0s;
+        }
+
+        &--up{
+            top: 0;
+        }
+
+        &--down{
+            top: -0.5em;
+        }
+
+        &--rotate{
+            transform: rotateX(90deg);
+        }
+    }    
+
+}
+*/
+.letter {
+  color: silver;
+  background-color: salmon;
   font-size: 4em;
   line-height: 1;
-  background-color: salmon;
-  transition: transform 0.25s;
-  transform: rotateX(0deg);
+  height: 1em;
+  width: 1em;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: nowrap;
 }
 
-.b-clock__flip--front {
-  z-index: 400;
+.l-flip {
+  background-color: blue;
+  width: 100%;
+  height: 0.5em;
+  overflow: hidden;
+  position: relative;
 }
 
-.b-clock__flip--back {
+.l-layer {
+  background-color: red;
+  width: 1em;
+  text-align: center;
+  position: absolute;
   z-index: 200;
-  transition: transform 0s;
+  transform: rotateX(0deg);
+  transition: all 0.25s;
 }
 
-.b-clock__flip--up {
-  top: 0;
-}
-
-.b-clock__flip--down {
+.l-layer.-isdown {
   top: -0.5em;
 }
 
-.b-clock__flip--rotate {
+.l-layer.-isback {
+  z-index: 100;
+}
+
+.l-layer.-isrotated {
   transform: rotateX(90deg);
 }
