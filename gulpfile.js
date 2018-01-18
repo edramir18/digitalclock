@@ -11,9 +11,9 @@ gulp.task('sass', () => {
             outputStyle: 'expanded',
             sourceComments: false
         }))
-        .pipe(autoprefixer({
+        /*.pipe(autoprefixer({
             versions: ['last 2 browsers']
-        }))
+        }))*/
         .pipe(gulp.dest('./public/css'))
         .pipe(browserSync.stream());
 });

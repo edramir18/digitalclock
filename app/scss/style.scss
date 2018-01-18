@@ -1,9 +1,86 @@
+/*
+ * Variables
+ */
 $color: red;
+$stack-color: rgba(yellow, 0.6);
+$letter-color: rgba(orange, 0.6);
+$flip-color: rgba(salmon, 1);
+
+/*
+ * Normalize CSS
+ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Courier New, Courier, monospace;
+}
 
 body {
-    background-color: $color;
-    color: aquamarine;
+    margin: 0;
+    padding: 0;
 }
-p {
-    display: flex;
+
+/*
+ * Components
+ */
+.base {
+    background-color: olivedrab;
+    height: 100vh;
+    width: 100vw;
+}
+.b-clock{
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin: 0.5em;
+    
+    &__stack {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        background-color: $stack-color;
+        height: 2em;
+    }    
+
+    &__letter {        
+        position: relative;
+        background-color: $letter-color;
+        height: 2em;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__flip {
+        position: absolute;
+        font-size: 4em;
+        line-height: 1;
+        background-color: $flip-color;
+        transition: all .25s;
+        transform: rotateX(0deg);
+
+        &--front {
+            z-index: 200;
+        }
+
+        &--back {
+            z-index: 100;
+        }
+
+        &--up{
+            top: 0;
+        }
+
+        &--down{
+            top: -0.5em;
+        }
+
+        &--rotate{
+            transform: rotateX(90deg);
+        }
+    }    
+
 }
