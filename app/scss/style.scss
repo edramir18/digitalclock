@@ -35,10 +35,10 @@ body {
 }
 .b-clock{
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 4rem;
     margin: 0.5em;
     
-    &__stack {
+    &__stack {        
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -59,15 +59,16 @@ body {
         font-size: 4em;
         line-height: 1;
         background-color: $flip-color;
-        transition: all .25s;
+        transition: transform 0.25s;
         transform: rotateX(0deg);
 
         &--front {
-            z-index: 200;
+            z-index: 400;
         }
 
         &--back {
-            z-index: 100;
+            z-index: 200;
+            transition: transform 0s;
         }
 
         &--up{
