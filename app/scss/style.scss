@@ -1,7 +1,8 @@
 /*
  * Variables
  */
-
+$display-background : white;
+$display-color : black;
 /*
  * Normalize CSS
  */
@@ -31,27 +32,48 @@ body {
     font-size: 2rem;
 }
 
+.clock{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 2rem;
+    justify-content: center;
+    background-color: orange;
+    padding: {
+        bottom: 0.2em;
+        top: 0.2em;
+    }
+    &__colon{
+        font-size: 2em;
+        line-height: 2;
+        width: 1ch;
+        height: 1em;        
+    }
+}
+
 .letter {    
-    color: black;
+    color: $display-color;    
     font-size: 4em;
     line-height: 1;
     height: 1em;
-    width: 1em;
+    width: 1ch;
     display: flex;
     flex-direction: column;
     align-content: center;
     flex-wrap: nowrap;
+    margin-right: 0.01em;
 }
 
 .l-flip {    
-    width: 100%;
+    width: 1ch;
     height: 0.5em;
     overflow: hidden;
-    position: relative;    
+    position: relative;
+    border-radius: 10%;
+    margin: 0.01em;
 }
 .l-layer{
-    background-color: white;
-    width: 1em;
+    background-color: $display-background;
     text-align: center;
     position: absolute;
     z-index: 200;
