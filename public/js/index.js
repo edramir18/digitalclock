@@ -1,5 +1,5 @@
 'use strict'
-'use strict'
+
 function Clock(clockIdName){
     function intDivision(num, div){
         return (num - num%div) / div;
